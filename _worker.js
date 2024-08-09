@@ -214,6 +214,18 @@ export default {
                         });
 
                     default:
+			return new Response('<a href="/panel">/panel<a>', {
+				status: 200,
+				headers: {
+					'Content-Type': 'text/html',
+	                                'Access-Control-Allow-Origin': url.origin,
+	                                'Access-Control-Allow-Methods': 'GET, POST',
+	                                'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+	                                'X-Content-Type-Options': 'nosniff',
+	                                'X-Frame-Options': 'DENY',
+	                                'Referrer-Policy': 'strict-origin-when-cross-origin'
+				}
+			});
                         // return new Response('Not found', { status: 404 });
                         url.hostname = 'www.speedtest.net';
                         url.protocol = 'https:';
